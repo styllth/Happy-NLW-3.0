@@ -14,22 +14,22 @@
 
 <p align="center">
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/styllth/Happy-NLW3.0?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/styllth/Happy-NLW-3.0?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/styllth/Happy-NLW3.0">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/styllth/Happy-NLW-3.0">
 
   <a href="https://www.linkedin.com/in/styllth/">
     <img alt="Made by Styllth" src="https://img.shields.io/badge/made%20by-Styllth-%2304D361">
   </a>
 
-  <a href="https://github.com/styllth/Happy-NLW3.0/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/styllth/Happy-NLW3.0">
+  <a href="https://github.com/styllth/Happy-NLW-3.0/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/styllth/Happy-NLW-3.0">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
-  <a href="https://github.com/styllth/Happy-NLW3.0/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/styllth/Happy-NLW3.0?style=social">
+  <a href="https://github.com/styllth/Happy-NLW-3.0/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/styllth/Happy-NLW-3.0?style=social">
   </a>
 </p>
 
@@ -110,9 +110,9 @@ Foi utilizado o conceito de mono-repo para criação do projeto.
 
 Podemos considerar este projeto como sendo divido em três partes:
 
-1. Back End (pasta server)
-2. Front End (pasta web)
-3. Mobile (pasta mobile)
+1. Back End (pasta packages/server)
+2. Front End (pasta packages/web)
+3. Mobile (pasta packages/mobile)
 
 :bulb: Tanto o Front End quanto o Mobile precisam que o Back End esteja sendo executado para funcionar.
 
@@ -131,10 +131,10 @@ Neste projeto foi usado o [VSCode](https://code.visualstudio.com/)
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/styllth/Happy-NLW3.0.git
+$ git clone https://github.com/styllth/Happy-NLW-3.0.git
 
 # Acesse a pasta do projeto no terminal
-$ cd Happy-NLW3.0
+$ cd Happy-NLW-3.0
 
 # Instale as dependências
 $ yarn
