@@ -15,21 +15,14 @@
       "start:server": "yarn workspace @happy/server server",
       "start:mobile": "yarn workspace @happy/mobile start",
       "test": "jest",
-      "start": "ts-node src/index.ts",
       "migration:create": "yarn workspace @happy/server typeorm migration:create",
       "migration:run": "yarn workspace @happy/server typeorm migration:run"
    },
    "devDependencies": {
       "@happy/eslint-config": "*",
       "@types/jest": "^26.0.14",
-      "@types/node": "^8.0.29",
       "jest": "^26.5.3",
       "ts-jest": "^26.4.1",
-      "ts-node": "3.3.0",
       "typescript": "3.3.3333"
-   },
-   "dependencies": {
-      "typeorm": "0.2.28",
-      "reflect-metadata": "^0.1.10"
    }
 }
