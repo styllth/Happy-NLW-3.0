@@ -1,44 +1,41 @@
 import styled from 'styled-components';
 
 export const AppSidebar = styled.aside`
-
   position: fixed;
   height: 100%;
   padding: 32px 24px;
-  background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
+  background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-img {
-  width: 48px;
-}
+  img {
+    width: 48px;
+  }
 
-footer a,
-footer button {
-  width: 48px;
-  height: 48px;
+  footer a,
+  footer button {
+    width: 48px;
+    height: 48px;
 
-  border: 0;
+    border: 0;
 
-  background: #12AFCB;
-  border-radius: 16px;
+    background: #12afcb;
+    border-radius: 16px;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: background-color 0.2s;
+    transition: background-color 0.2s;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-footer a:hover,
-footer button:hover {
-  background: #17D6EB;
-}
-
-
+  footer a:hover,
+  footer button:hover {
+    background: #17d6eb;
+  }
 `;

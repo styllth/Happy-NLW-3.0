@@ -1,37 +1,54 @@
 {
-  "name": "@happy/web",
+  "name": "@repo/web",
   "version": "0.1.0",
-  "private": true,
   "author": {
     "name": "Styllth Saraiva Ribeiro",
     "email": "styllth@yahoo.com.br"
   },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
+  "license": "MIT",
+  "private": true,
   "dependencies": {
+    "@repo/axios": "*",
     "@unform/core": "^2.1.3",
     "@unform/web": "^2.1.3",
     "dotenv": "^8.2.0",
     "leaflet": "^1.7.1",
-    "next": "9.5.5",
-    "next-images": "^1.6.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "react-leaflet": "^2.7.0",
+    "react-leaflet": "^3.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
     "react-toastify": "^6.0.9",
-    "styled-components": "^5.2.0",
-    "swr": "^0.3.5"
+    "styled-components": "^5.2.1",
+    "swr": "^0.3.5",
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
     "@types/node": "^14.11.8",
-    "@types/react": "^16.9.52",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
     "@types/react-leaflet": "^2.5.2",
-    "@types/styled-components": "^5.1.4",
-    "typescript": "^4.0.3"
+    "@types/react-router-dom": "^5.1.6",
+    "@types/styled-components": "^5.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

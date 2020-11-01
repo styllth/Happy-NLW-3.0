@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { InputHTMLAttributes, useRef, useEffect } from 'react';
 
 import { useField } from '@unform/core';
@@ -12,13 +13,9 @@ interface Props {
 
 type InputProps = JSX.IntrinsicElements['input'] & Props;
 
-const Input: React.FC<InputProps> = ({
-  name, label, prefix, ...rest
-}) => {
+const Input: React.FC<InputProps> = ({ name, label, prefix, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const {
-    fieldName, defaultValue, error, registerField,
-  } = useField(name);
+  const { fieldName, defaultValue, error, registerField } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -30,7 +27,7 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <Container>
-      {label && (<label htmlFor={fieldName}>{label}</label>)}
+      {label && <label htmlFor={fieldName}>{label}</label>}
       {prefix && <p>{prefix}</p>}
       <input
         ref={inputRef}

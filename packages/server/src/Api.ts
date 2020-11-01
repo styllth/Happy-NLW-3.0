@@ -34,12 +34,15 @@ export default class Api {
 
   routes() {
     this.server.use('/v1', routes);
-    this.server.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
+    this.server.use(
+      '/uploads',
+      express.static(path.join(__dirname, '..', 'uploads'))
+    );
   }
 
   exceptionHandler() {
-		this.server.use(errorHandler);
-	}
+    this.server.use(errorHandler);
+  }
 
   init() {
     const port = process.env.PORT_APP || 3333;

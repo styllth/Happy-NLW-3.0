@@ -1,28 +1,30 @@
 {
-   "name": "happy",
-   "private": true,
-   "version": "1.0.0",
-   "main": "index.js",
-   "author": "Styllth <styllth@yahoo.com.br>",
-   "license": "MIT",
-   "workspaces": {
-      "packages": [
-         "packages/*"
-      ]
-   },
-   "scripts": {
-      "start:web": "yarn workspace @happy/web dev",
-      "start:server": "yarn workspace @happy/server server",
-      "start:mobile": "yarn workspace @happy/mobile start",
-      "test": "jest",
-      "migration:create": "yarn workspace @happy/server typeorm migration:create",
-      "migration:run": "yarn workspace @happy/server typeorm migration:run"
-   },
-   "devDependencies": {
-      "@happy/eslint-config": "*",
-      "@types/jest": "^26.0.14",
-      "jest": "^26.5.3",
-      "ts-jest": "^26.4.1",
-      "typescript": "3.3.3333"
-   }
+  "name": "happy",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Styllth Saraiva Ribeiro",
+    "email": "styllth@yahoo.com.br"
+  },
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "test": "yarn workspace @repo/jest test",
+    "start:server": "yarn workspace @repo/server server",
+    "start:web": "yarn workspace @repo/web start",
+    "start:mobile": "yarn workspace @repo/mobile start",
+    "postinstall": "cd ./packages/mobile && expo-yarn-workspaces postinstall",
+    "migration:create": "yarn workspace @repo/server typeorm migration:create",
+    "migration:run": "yarn workspace @repo/server typeorm migration:run"
+  },
+  "devDependencies": {
+    "@repo/eslint": "*",
+    "@repo/jest": "*",
+    "typescript": "^4.0.5"
+  }
 }

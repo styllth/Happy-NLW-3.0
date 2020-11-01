@@ -1,3 +1,3 @@
-const eslintConfig = require('@happy/eslint-config')
+const eslint = require('@repo/eslint')
 
-module.exports = eslintConfig
+module.exports = eslint

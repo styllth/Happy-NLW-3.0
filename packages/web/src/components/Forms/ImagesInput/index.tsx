@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, {
   ChangeEvent,
   useRef,
@@ -18,28 +19,29 @@ interface Props {
 
 type InputProps = JSX.IntrinsicElements['input'] & Props;
 
-const ImagesInput: React.FC<InputProps> = ({
-  name,
-  label,
-  ...rest
-}) => {
+const ImagesInput: React.FC<InputProps> = ({ name, label, ...rest }) => {
   const inputImageRef = useRef<HTMLInputElement>(null);
-  const {
-    fieldName, defaultValue, error, registerField,
-  } = useField(name);
+  const { fieldName, defaultValue, error, registerField } = useField(name);
 
   const [preview, setPreview] = useState(defaultValue);
+  const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-  const handlePreview = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const { files } = e.target;
-    if (!files) {
-      setPreview(null);
-    }
-    const selectedImages = Array.from(files);
-    const previewURL = selectedImages.map((image) => URL.createObjectURL(image));
+  const handlePreview = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const { files } = e.target;
+      if (!files) {
+        setPreview(null);
+      } else {
+        setSelectedImages(Array.from(files));
+      }
+      const previewURL = selectedImages.map(image =>
+        URL.createObjectURL(image)
+      );
 
-    setPreview(previewURL);
-  }, []);
+      setPreview(previewURL);
+    },
+    [selectedImages]
+  );
 
   useEffect(() => {
     registerField({
@@ -58,13 +60,13 @@ const ImagesInput: React.FC<InputProps> = ({
 
   return (
     <Container>
-
       <label htmlFor={name}>{label}</label>
 
       <ImagesContainer>
-        {preview && preview.map((image : string) => (
-          <img key={image} src={image} alt={image} />
-        ))}
+        {preview &&
+          preview.map((image: string) => (
+            <img key={image} src={image} alt={image} />
+          ))}
 
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label className="new-image" htmlFor={name}>
@@ -80,7 +82,6 @@ const ImagesInput: React.FC<InputProps> = ({
         />
       </ImagesContainer>
     </Container>
-
   );
 };
 

@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
+// eslint-disable-next-line import/prefer-default-export
 export class createImages1602768534481 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
@@ -34,7 +35,7 @@ export class createImages1602768534481 implements MigrationInterface {
             onDelete: 'CASCADE',
           },
         ],
-      }),
+      })
     );
   }
 

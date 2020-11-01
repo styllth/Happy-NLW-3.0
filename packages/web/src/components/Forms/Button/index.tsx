@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { ButtonHTMLAttributes } from 'react';
 
 import { Container } from './styles';

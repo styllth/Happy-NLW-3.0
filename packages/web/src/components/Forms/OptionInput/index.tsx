@@ -1,6 +1,5 @@
-import React, {
-  InputHTMLAttributes, useRef, useEffect, useState,
-} from 'react';
+/* eslint-disable @typescript-eslint/ban-types */
+import React, { InputHTMLAttributes, useRef, useEffect, useState } from 'react';
 
 import { useField } from '@unform/core';
 
@@ -21,14 +20,14 @@ const OptionInput: React.FC<InputProps> = ({
   ...rest
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const {
-    fieldName, defaultValue, error, registerField,
-  } = useField(name);
+  const { fieldName, defaultValue, error, registerField } = useField(name);
 
   const [active, setActive] = useState(true);
 
-  const setValueInput = (value : boolean) => {
-    inputRef.current.value = String(value);
+  const setValueInput = (value: boolean) => {
+    if (inputRef.current) {
+      inputRef.current.value = String(value);
+    }
     setActive(value);
   };
 

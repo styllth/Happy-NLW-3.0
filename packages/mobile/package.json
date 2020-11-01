@@ -1,0 +1,35 @@
+{
+  "name": "@repo/mobile",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Styllth Saraiva Ribeiro",
+    "email": "styllth@yahoo.com.br"
+  },
+  "main": "__generated__/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@repo/axios": "*",
+    "expo": "^39.0.3",
+    "expo-status-bar": "^1.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-native": "^0.63.3",
+    "react-native-web": "^0.14.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-native": "^0.63.30",
+    "expo-yarn-workspaces": "^1.2.1",
+    "metro-config": "^0.63.0"
+  },
+  "private": true
+}

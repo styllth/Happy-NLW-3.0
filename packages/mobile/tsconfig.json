@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "allowJs": false,
+    "checkJs": false,
+    "moduleResolution": "node",
+    "strict": true
+  }
+}

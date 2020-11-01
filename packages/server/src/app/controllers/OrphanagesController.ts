@@ -45,7 +45,7 @@ class OrphanagesController {
 
     // Buscando as imagens e salvando o relacionamento
     const requestImages = request.files as Express.Multer.File[];
-    const images = requestImages.map((image) => ({ path: image.filename }));
+    const images = requestImages.map(image => ({ path: image.filename }));
 
     const data = {
       name,
@@ -69,7 +69,7 @@ class OrphanagesController {
       images: Yup.array(
         Yup.object().shape({
           path: Yup.string().required(),
-        }),
+        })
       ),
     });
 
@@ -86,7 +86,7 @@ class OrphanagesController {
 
   async delete(
     request: Request,
-    response: Response,
+    response: Response
   ): Promise<Response<unknown>> {
     const { orphanage_id } = request.params;
     const orphanagesRepository = getRepository(Orphanage);

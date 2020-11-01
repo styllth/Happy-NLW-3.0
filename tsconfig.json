@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
+    "strict": true,
     "noEmit": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -9,6 +10,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }

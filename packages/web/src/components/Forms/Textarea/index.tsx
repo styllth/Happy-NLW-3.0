@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { InputHTMLAttributes, useRef, useEffect } from 'react';
 
 import { useField } from '@unform/core';
@@ -10,13 +11,9 @@ interface TextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
   info?: string;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({
-  name, label, info, ...rest
-}) => {
+const TextArea: React.FC<TextAreaProps> = ({ name, label, info, ...rest }) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  const {
-    fieldName, defaultValue, error, registerField,
-  } = useField(name);
+  const { fieldName, defaultValue, error, registerField } = useField(name);
   useEffect(() => {
     registerField({
       name: fieldName,

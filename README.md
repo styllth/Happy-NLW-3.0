@@ -168,10 +168,6 @@ $ yarn start:web
 # Execute o app em modo de desenvolvimento
 $ yarn start:mobile
 
-# Usando o Expo, basta digitalizar o qrcode no terminal ou na página da exposição
-
-# Se houver algum problema com as fontes, execute:
-$ expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto
 ```
 
 <a id="como-contribuir"></a>
