@@ -1,21 +1,33 @@
 /* eslint-disable react/style-prop-object */
+import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const App: React.FC = () => (
-  <View style={styles.container}>
-    <Text>App Funcionando!!!</Text>
-    <StatusBar style="auto" />
-  </View>
-);
+import Routes from './src/routes';
+
+const App: React.FC = () => {
+  const [fontsLoaded] = useFonts({
+    Nunito_600SemiBold,
+    Nunito_700Bold,
+    Nunito_800ExtraBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
+  return (
+    <>
+      <StatusBar style="dark" />
+      <Routes />
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#c6d2dd',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
