@@ -19,7 +19,7 @@ export default class Api {
     this.exceptionHandler();
   }
 
-  cors() {
+  cors(): void {
     this.server.use(cors());
     /* set optional cors
     {
@@ -28,11 +28,11 @@ export default class Api {
     */
   }
 
-  middlewares() {
+  middlewares(): void {
     this.server.use(express.json());
   }
 
-  routes() {
+  routes(): void {
     this.server.use('/v1', routes);
     this.server.use(
       '/uploads',
@@ -40,13 +40,14 @@ export default class Api {
     );
   }
 
-  exceptionHandler() {
+  exceptionHandler(): void {
     this.server.use(errorHandler);
   }
 
-  init() {
+  init(): void {
     const port = process.env.PORT_APP || 3333;
     this.server.listen(port, () => {
+      // eslint-disable-next-line no-console
       console.log(`Server running in port: ${port}`);
     });
   }

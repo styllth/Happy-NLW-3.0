@@ -1,16 +1,14 @@
 import express from 'express';
-import multer from 'multer';
 
-import OrphanagesController from '../app/controllers/OrphanagesController';
-import uploadConfig from '../config/upload';
+import authenticatesRoutes from './authenticates.routes';
+import noAuthenticatesRoutes from './noAuthenticates.routes';
 
 const routes = express.Router();
-const upload = multer(uploadConfig);
 
-// Rotas
-routes.get('/orphanages', OrphanagesController.index);
-routes.get('/orphanages/:id', OrphanagesController.show);
-routes.post('/orphanages', upload.array('images'), OrphanagesController.create);
-routes.delete('/orphanages/:orphanage_id', OrphanagesController.delete);
+// rotas não autenticadas
+routes.use(noAuthenticatesRoutes);
+
+// rotas autenticadas
+routes.use(authenticatesRoutes);
 
 export default routes;
