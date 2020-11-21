@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 
+import AppProvider from './contexts';
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
 import GlobalSyles from './styles/global';
@@ -13,7 +14,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalSyles />
-      <Routes />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
     </ThemeProvider>
   );
 };

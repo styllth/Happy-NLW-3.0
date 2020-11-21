@@ -1,20 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import CreateOrphanage from '../pages/CreateOrphanages';
-import Lading from '../pages/Landing';
-import OrphanageDetails from '../pages/OrphanageDetails';
-import OrphanagesMap from '../pages/OrphanagesMap';
+import Loading from '../components/Loading';
+import { useAuth } from '../hooks/useAuth';
+import AuthRoutes from './auth.routes';
+import NoAuthRoutes from './noAuth.routes';
 
 const Routes: React.FC = () => {
+  const { signed } = useAuth();
+
+  // if (loading) return <Loading />;
+
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Lading} />
-        <Route path="/orphanages-map" component={OrphanagesMap} />
-        <Route path="/orphanages-create" component={CreateOrphanage} />
-        <Route path="/orphanages-details/:id" component={OrphanageDetails} />
-      </Switch>
+      <Switch>{signed ? <AuthRoutes /> : <NoAuthRoutes />}</Switch>
     </BrowserRouter>
   );
 };

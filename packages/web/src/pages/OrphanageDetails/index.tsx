@@ -43,8 +43,7 @@ const OrphanageDetails: React.FC = () => {
   const params = useParams<iOrphanageParams>();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  const { data } = useFetchSWR<iOrphanage>(`orphanages/${params.id}`);
-
+  const { data } = useFetchSWR<iOrphanage>(`/orphanages/${params.id}`);
   if (!data) return <Loading />;
 
   const orphanage = data;

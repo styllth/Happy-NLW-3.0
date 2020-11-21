@@ -24,12 +24,9 @@ authenticatesRoutes
   .delete('/users/:user_id', UserController.delete);
 
 /**
- * Rota /api/classes/
- * default Controllers = index, show, create, update, delete
+ * Rota /api/orphanages/
  */
 authenticatesRoutes
-  .get('/orphanages', OrphanagesController.index)
-  .get('/orphanages/:id', OrphanagesController.show)
   .post('/orphanages', upload.array('images'), OrphanagesController.create)
   .put('/orphanages/:id/edit', OrphanagesController.update)
   .delete('/orphanages/:orphanage_id', OrphanagesController.delete);
